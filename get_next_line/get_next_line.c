@@ -6,7 +6,7 @@
 /*   By: jlopez-c <jlopez-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/21 11:40:50 by jlopez-c          #+#    #+#             */
-/*   Updated: 2020/02/19 18:46:14 by jlopez-c         ###   ########.fr       */
+/*   Updated: 2020/02/21 15:34:35 by jlopez-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int 	i;
+	int		i;
 	char	*str;
+
 	i = 0;
 	if (!s)
 		return (NULL);
@@ -27,7 +28,7 @@ char	*ft_strchr(const char *s, int c)
 		i++;
 	}
 	if (str[i] == (unsigned char)c)
-			return (&str[i]);
+		return (&str[i]);
 	return (NULL);
 }
 
@@ -44,7 +45,7 @@ int		ft_line(int fd, char **all, char **line)
 {
 	int		size;
 	char	*temp;
-	
+
 	size = 0;
 	while (all[fd][size] != '\n')
 		size++;
@@ -81,13 +82,11 @@ int		get_next_line(int fd, char **line)
 	char			*buffer;
 	char			*temp;
 	int				bytes;
-	
+
 	buffer = (char*)malloc(sizeof(char) * BUFFER_SIZE + 1);
-	bytes = read(fd, buffer, BUFFER_SIZE);
-	
 	if (fd < 0 || BUFFER_SIZE <= 0 || !line || !buffer)
 		return (-1);
-	while(bytes > 0)
+	while ((bytes = read(fd, buffer, BUFFER_SIZE)) > 0)
 	{
 		buffer[bytes] = '\0';
 		if (all[fd] == NULL)
@@ -99,7 +98,7 @@ int		get_next_line(int fd, char **line)
 			all[fd] = temp;
 		}
 		if (ft_strchr(all[fd], '\n'))
-			break;
+			break ;
 	}
 	free(buffer);
 	return (ft_binary(bytes, fd, all, line));

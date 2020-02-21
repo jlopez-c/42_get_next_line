@@ -6,12 +6,12 @@
 /*   By: jlopez-c <jlopez-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/21 11:41:06 by jlopez-c          #+#    #+#             */
-/*   Updated: 2020/02/19 18:46:19 by jlopez-c         ###   ########.fr       */
+/*   Updated: 2020/02/21 15:27:15 by jlopez-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GNL_H
-# define GNL_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 32

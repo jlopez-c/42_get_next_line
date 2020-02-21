@@ -6,7 +6,7 @@
 /*   By: jlopez-c <jlopez-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/21 11:41:01 by jlopez-c          #+#    #+#             */
-/*   Updated: 2020/02/19 18:46:17 by jlopez-c         ###   ########.fr       */
+/*   Updated: 2020/02/21 15:27:12 by jlopez-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 			str[i++] = *s2++;
 		str[i] = '\0';
 		return (str);
-		}
+	}
 	return (0);
 }
 
@@ -67,13 +67,13 @@ void	ft_bzero(void *s, size_t n)
 
 	ptr = (unsigned char*)s;
 	while (n-- > 0)
-		*(ptr++) = 0;
+		*ptr++ = 0;
 }
 
-char 	*ft_substr(const char *s, unsigned int start, size_t len)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char			*str;
-	unsigned int 	i;
+	unsigned int	i;
 
 	i = 0;
 	if (s)
