@@ -22,7 +22,6 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-//Esta funcion genera una cadena de caractereces que le introducimos como parametro, aloja memoria suficiente para ella y devuelve un puntero a la misma.
 char	*ft_strdup(const char *s1)
 {
 	char	*str;
